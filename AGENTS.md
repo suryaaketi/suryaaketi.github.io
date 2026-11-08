@@ -22,4 +22,4 @@ The user wants the research internship explained through high-level contribution
 
 ## Appearance
 
-The user wants only the charcoal and gold version. Do not reintroduce a light theme, system color switching, or theme selector. Print styles may use a white paper background. Preserve dashboard and disclosure preferences.
+The user wants only the charcoal and gold version. Do not reintroduce a light theme, system color switching, or theme selector. Print styles may use a white paper background. Preserve dashboard and disclosure preferences. Use the transparent name-lettering asset over the shared page surface; do not reintroduce an opaque artwork rectangle or edge-fade masks.
