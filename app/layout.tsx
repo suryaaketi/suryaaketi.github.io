@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head><link rel="stylesheet" href="/site-background.css" /><script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} /></head>
+      <head><link rel="stylesheet" href="/site-background.css?v=charcoal-grain" /><script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} /></head>
       <body className="antialiased"><ErrorBoundary>{children}</ErrorBoundary></body>
     </html>
   );

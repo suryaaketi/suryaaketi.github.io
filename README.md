@@ -93,7 +93,7 @@ No API keys are required for the portfolio. Do not commit `.env*`, `.dev.vars*`,
 
 ## Usability and reliability
 
-The portfolio uses 16px body copy and a 14px minimum for labels at the browser’s default text size, with rem units for text scaling. Controls have at least 44px touch targets. Layouts reflow on small screens and with larger text. Both themes use a warm gold palette; icons are SVG. The original name artwork is in `public/surya-aketi-emblem.png`, displayed as an accessible heading with intrinsic dimensions to avoid layout shifts. `public/site-background.css` supplies the shared charcoal lighting, grain, and artwork edge blending for both publishing targets; the light theme uses a warm cream version.
+The portfolio uses 16px body copy and a 14px minimum for labels at the browser’s default text size, with rem units for text scaling. Controls have at least 44px touch targets. Layouts reflow on small screens and with larger text. Both themes use a warm gold palette; icons are SVG. The original name artwork is in `public/surya-aketi-emblem.png`, displayed as an accessible heading with intrinsic dimensions to avoid layout shifts. `public/site-background.css` supplies the shared charcoal lighting and artwork edge blending for both publishing targets. Its seamless `public/charcoal-grain.svg` tile combines broad surface variation with fine grain across the full page; the light theme uses a softer warm cream version.
 
 The color selector offers Dark, Light, and System. Its choice, the dashboard view, and expanded résumé sections are saved locally on the visitor’s device. If local storage is unavailable, the page remains usable. Reduced-motion settings are respected and touch controls provide press feedback.
 

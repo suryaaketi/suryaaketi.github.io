@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="384" height="384" viewBox="0 0 384 384">
+  <filter id="charcoal" x="0" y="0" width="384" height="384" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency=".22" numOctaves="3" seed="11" stitchTiles="stitch" result="roughness"/>
+    <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7" stitchTiles="stitch" result="grain"/>
+    <feComposite in="roughness" in2="grain" operator="arithmetic" k1="0" k2=".14" k3=".86" k4="0"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer>
+      <feFuncR type="linear" slope="1.8" intercept="-.4"/>
+      <feFuncG type="linear" slope="1.8" intercept="-.4"/>
+      <feFuncB type="linear" slope="1.8" intercept="-.4"/>
+      <feFuncA type="table" tableValues="1 1"/>
+    </feComponentTransfer>
+  </filter>
+  <path d="M0 0h384v384H0z" filter="url(#charcoal)"/>
+</svg>
