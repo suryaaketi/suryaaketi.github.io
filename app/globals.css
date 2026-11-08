@@ -168,8 +168,8 @@ em { font: inherit; color: var(--blue); }
 .experience-list { min-width: 0; }
 .experience-item { border-top: 1px solid var(--line); }
 .experience-item:last-child { border-bottom: 1px solid var(--line); }
-.experience-item>summary { list-style: none; display: flex; align-items: center; gap: .875rem; min-height: 44px; padding: 1rem 0; cursor: pointer; }
-.experience-item>summary::-webkit-details-marker, .certifications summary::-webkit-details-marker { display: none; }
+.job-header { display: flex; align-items: center; gap: .875rem; min-height: 44px; padding: 1rem 0; }
+.certifications summary::-webkit-details-marker { display: none; }
 .company-icon { display: grid; place-items: center; flex-shrink: 0; width: 2.75rem; height: 2.75rem; border: 1px solid var(--line); border-radius: .625rem; background: var(--tone-teal); color: var(--blue); font-size: 1rem; font-weight: 600; }
 .company-1 { background: var(--tone-warm); color: var(--peach); font-size: 1.25rem; }
 .job-heading { display: flex; flex-direction: column; gap: .375rem; flex: 1; min-width: 0; }
@@ -304,9 +304,8 @@ details[open]>summary .expand-icon:after { transform: rotate(0deg); }
   .bridge-core { width: 4.75rem; }
   .node-icon { width: 2.5rem; height: 2.5rem; }
   .connector-line { max-width: 1rem; }
-  .experience-item>summary { flex-wrap: wrap; }
+  .job-header { flex-wrap: wrap; }
   .job-heading { flex-basis: calc(100% - 4rem); }
-  .experience-item>summary>.expand-icon { margin-left: auto; }
   .contact-main { align-items: start; flex-wrap: wrap; }
   .contact-main h2 { font-size: 1.875rem; }
 }
