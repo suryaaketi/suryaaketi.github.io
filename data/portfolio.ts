@@ -223,6 +223,55 @@ export const experience = [
   },
 ];
 
+export type CourseworkGroup = {
+  id: string;
+  title: string;
+  courses: { code: string; title: string; status?: string }[];
+};
+
+// Public course information only. Never add grades, GPA, or transcript records.
+export const courseworkGroups: CourseworkGroup[] = [
+  {
+    id: "computer-science",
+    title: "Computer science",
+    courses: [
+      { code: "CMPSC 131", title: "Programming and Computation I: Fundamentals" },
+      { code: "CMPSC 132", title: "Programming and Computation II: Data Structures" },
+      { code: "CMPSC 221", title: "Object Oriented Programming with Web-Based Applications" },
+      { code: "CMPSC 311", title: "Introduction to Systems Programming" },
+      { code: "CMPSC 360", title: "Discrete Mathematics for Computer Science" },
+      { code: "CMPSC 431W", title: "Database Management Systems", status: "In progress · Fall 2026" },
+      { code: "CMPSC 449", title: "Foundations of Natural Language Processing", status: "Planned · Spring 2027" },
+      { code: "CMPSC 461", title: "Programming Language Concepts" },
+      { code: "CMPSC 464", title: "Introduction to the Theory of Computation", status: "In progress · Fall 2026" },
+      { code: "CMPSC 465", title: "Data Structures and Algorithms" },
+      { code: "CMPSC 471", title: "Introduction to Compiler Construction", status: "Planned · Spring 2027" },
+      { code: "CMPSC 473", title: "Operating Systems Design & Construction", status: "In progress · Fall 2026" },
+    ],
+  },
+  {
+    id: "mathematics-statistics",
+    title: "Mathematics & statistics",
+    courses: [
+      { code: "MATH 140", title: "Calculus with Analytic Geometry I" },
+      { code: "MATH 141", title: "Calculus with Analytic Geometry II" },
+      { code: "MATH 220", title: "Matrices" },
+      { code: "STAT 200", title: "Elementary Statistics" },
+      { code: "STAT 318", title: "Elementary Probability", status: "In progress · Fall 2026" },
+      { code: "STAT 319", title: "Elementary Mathematical Statistics", status: "Planned · Spring 2027" },
+    ],
+  },
+  {
+    id: "computer-systems",
+    title: "Computer systems & engineering",
+    courses: [
+      { code: "CMPEN 270", title: "Digital Design: Theory and Practice" },
+      { code: "CMPEN 331", title: "Computer Organization and Design" },
+      { code: "CMPEN 431", title: "Introduction to Computer Architecture", status: "Planned · Spring 2027" },
+    ],
+  },
+];
+
 export const skillGroups = [
   {
     name: "Languages",
