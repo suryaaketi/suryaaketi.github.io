@@ -228,6 +228,9 @@
 @media (max-width: 53.125rem) {
   .dash-window { justify-self: center; }
 }
+@media screen and (min-width: 75rem) {
+  .dash-window { max-width: 38rem; }
+}
 @media (max-width: 22.5rem) {
   .dash-content { padding: .875rem; }
   .dash-stat { padding: .75rem; }

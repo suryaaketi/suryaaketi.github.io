@@ -27,7 +27,7 @@ export function renderPortfolioFallback() {
 }
 
 export const portfolioFallbackStyles = `
-  .initial-portfolio{font:1rem/1.75 system-ui,sans-serif;color:#f2eee4;max-width:74rem;margin:auto;padding:1.25rem;background:transparent;overflow-wrap:anywhere}
+  .initial-portfolio{font:1rem/1.75 system-ui,sans-serif;color:#f2eee4;width:calc(100% - clamp(2rem,5vw,6rem));max-width:120rem;margin:auto;padding:1.25rem 0;background:transparent;overflow-wrap:anywhere}
   body:has(>.initial-portfolio),body:has(>#root>.initial-portfolio){margin:0;background:#0b0b0a}
   .initial-portfolio *{box-sizing:border-box}.initial-portfolio h1,.initial-portfolio h2,.initial-portfolio h3{line-height:1.2;letter-spacing:-.025em;color:#f1d99b;margin:0 0 1rem}
   .initial-portfolio h1{font-size:clamp(2.5rem,7vw,4.75rem)}.initial-portfolio h2{font-size:2rem}.initial-portfolio h3{font-size:1.25rem}.initial-portfolio em{font-style:normal;color:#e2c16d}
@@ -38,5 +38,6 @@ export const portfolioFallbackStyles = `
   .initial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr));gap:1rem}.initial-portfolio article{border:1px solid #4b4330;border-radius:.875rem;padding:1.25rem;background:#151512;margin-bottom:1rem;min-width:0}
   .initial-research-overview{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:1rem;margin-top:1rem}.initial-research-value{font-size:2.25rem;line-height:1.2;font-weight:650;color:#e2c16d;margin:0 0 .75rem}.initial-portfolio #research article p{margin:0 0 .75rem}.initial-portfolio #research .initial-tags{margin-top:1rem}
   .initial-actions,.initial-tags{display:flex;flex-wrap:wrap;gap:.75rem}.initial-actions a{border:1px solid #4b4330;border-radius:.5rem;padding:.65rem 1rem}.initial-tags span{font-size:.875rem;border:1px solid #4b4330;border-radius:.35rem;padding:.25rem .5rem}
+  @media screen and (min-width:75rem){.initial-portfolio #initial-experience{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}.initial-portfolio #initial-experience>h2{grid-column:1/-1}.initial-portfolio #initial-experience>article{margin-bottom:0}}
   .initial-portfolio details{margin-top:1rem}.initial-portfolio summary{cursor:pointer;min-height:2.75rem;line-height:1.5;padding:.65rem 0;color:#e2c16d}.initial-portfolio li{margin-bottom:.75rem}.initial-portfolio footer{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border-top:1px solid #4b4330;padding-top:1.5rem}.initial-portfolio footer h2{flex-basis:100%}
 `;

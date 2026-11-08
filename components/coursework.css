@@ -11,6 +11,9 @@
 .course-code { color: var(--blue, #e2c16d); font: .875rem/1.6 var(--mono, monospace); }
 .course-name { color: var(--ink, #f2eee4); font-size: 1rem; line-height: 1.6; overflow-wrap: anywhere; }
 .course-status { color: var(--muted, #bbb5a7); font-size: .875rem; line-height: 1.6; margin-top: .25rem; }
+@media screen and (min-width: 90rem) {
+  .coursework-group:first-child .coursework-list { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
 @media screen {
   @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
     .coursework-group { -webkit-backdrop-filter: blur(22px) saturate(130%); backdrop-filter: blur(22px) saturate(130%); box-shadow: var(--glass-shadow); }
