@@ -237,3 +237,17 @@
   .dash-segments button:active, .dash-explore:active { transform: none; }
 }
 @media print { .dash-window { display: none !important; } }
+
+@media screen {
+  @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .dash-window {
+      -webkit-backdrop-filter: blur(28px) saturate(140%);
+      backdrop-filter: blur(28px) saturate(140%);
+      box-shadow: var(--glass-shadow);
+    }
+    .dash-window-bar { background: linear-gradient(120deg, rgba(255, 249, 226, .045), transparent); }
+    .dash-stat, .dash-node-ring, .dash-segments {
+      box-shadow: inset 0 1px 0 rgba(255, 249, 226, .07);
+    }
+  }
+}

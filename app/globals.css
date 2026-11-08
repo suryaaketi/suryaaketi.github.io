@@ -346,3 +346,35 @@ details[open]>summary .expand-icon:after { transform: rotate(0deg); }
 
 :where(button,.button,.text-link,.nav>a,summary,.site-footer>a):active{filter:brightness(.93)}
 .bridge-policy,.scribe-bottom>span { min-width:0; max-width:100%; overflow-wrap:anywhere; }
+
+/* Glass is a surface treatment: keep the existing layout, type, and content. */
+@media screen {
+  @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    :root {
+      --panel: rgba(24, 26, 24, .72);
+      --header: rgba(25, 27, 25, .78);
+      --raised: rgba(69, 65, 50, .46);
+      --tone-teal: rgba(28, 37, 33, .62);
+      --tone-warm: rgba(56, 46, 28, .56);
+      --line: rgba(226, 193, 109, .24);
+      --glass-shadow: inset 0 1px 0 rgba(255, 249, 226, .09), 0 .75rem 2.5rem rgba(0, 0, 0, .16);
+    }
+    .site-header { position: relative; z-index: 40; }
+    :is(.header-inner, .focus-strip>.shell, .project-card, .research-card,
+        .research-question, .research-finding, .research-stream,
+        .experience-layout, .education-card, .skill-group, .project-dialog) {
+      -webkit-backdrop-filter: blur(22px) saturate(130%);
+      backdrop-filter: blur(22px) saturate(130%);
+      box-shadow: var(--glass-shadow);
+    }
+    .project-card:hover {
+      box-shadow: inset 0 1px 0 rgba(255, 249, 226, .13), 0 1rem 2.75rem rgba(0, 0, 0, .22);
+    }
+    :is(.scribe-window, .bridge-core, .node-icon, .company-icon, .circle-arrow, .contact-arrow) {
+      box-shadow: inset 0 1px 0 rgba(255, 249, 226, .08), 0 .25rem .875rem rgba(0, 0, 0, .1);
+    }
+    .project-dialog { background: rgba(24, 26, 24, .92); }
+    .project-dialog::backdrop { background: rgba(5, 7, 6, .64); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+    .nav.open { background: rgba(24, 26, 24, .96); }
+  }
+}

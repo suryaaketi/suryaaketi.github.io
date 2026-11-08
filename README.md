@@ -1,6 +1,6 @@
 # Surya Aketi — Portfolio
 
-A responsive portfolio for Surya Aketi's projects, research, experience, skills, and résumé. Its black and gold theme pairs the supplied Surya Aketi emblem with a full-page charcoal gradient and subtle grain, warm gold accents, and charcoal panels. The artwork edges blend into the page, and reduced-motion preferences are respected. Profile content is based on the supplied résumé and can be expanded with additional project context and achievements.
+A responsive portfolio for Surya Aketi's projects, research, experience, skills, and résumé. Its charcoal and gold theme pairs the supplied Surya Aketi emblem with a shared charcoal gradient, subtle grain, warm gold accents, and frosted glass panels. The glass treatment preserves the existing layout, typography, content, and interactions; browsers without backdrop blur keep opaque panels. The artwork edges blend into the page, and reduced-motion preferences are respected. Profile content is based on the supplied résumé and can be expanded with additional project context and achievements.
 
 The same page supports two deployment targets:
 

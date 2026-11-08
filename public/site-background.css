@@ -1,8 +1,8 @@
-/* Continuous matte charcoal grain echoes the supplied name artwork. */
+/* One charcoal surface behind the transparent name artwork and glass panels. */
 :root {
   color-scheme: dark;
-  --site-grain-opacity: .22;
-  --site-backdrop: radial-gradient(ellipse at 30% 16%, #30312f 0%, #232422 32%, #151614 65%, #0b0b0a 100%);
+  --site-grain-opacity: .12;
+  --site-backdrop: radial-gradient(ellipse at 82% 38%, #9a80300f 0%, transparent 52%), radial-gradient(ellipse at 30% 16%, #343a36 0%, #252925 32%, #171a17 65%, #0b0d0b 100%);
 }
 body { min-height: 100vh; isolation: isolate; }
 body::before, body::after {
