@@ -1,0 +1,25 @@
+.project-timeline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .75rem 1.25rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line, #4b4330);
+}
+.project-timeline-ring { position: relative; width: 8.5rem; height: 8.5rem; flex: 0 0 8.5rem; }
+.project-timeline-ring>svg { width: 100%; height: 100%; }
+.project-timeline-ticks { stroke: var(--blue, #e2c16d); stroke-opacity: .38; stroke-width: 1; }
+.project-timeline-track { stroke: var(--blue, #e2c16d); stroke-opacity: .14; stroke-width: 6; }
+.project-timeline-progress { stroke: var(--blue, #e2c16d); stroke-width: 6; }
+.project-timeline-value { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.3; pointer-events: none; }
+.project-timeline-value strong { color: var(--ink, #f2eee4); font-size: 2rem; font-weight: 500; letter-spacing: -.06em; }
+.project-timeline-value strong span { color: var(--muted, #bbb5a7); font-size: .875rem; font-weight: 400; letter-spacing: 0; margin-left: .125rem; }
+.project-timeline-value>span { color: var(--muted, #bbb5a7); font-size: .875rem; }
+.project-timeline-copy { flex: 1 1 10rem; min-width: 0; }
+.project-timeline-label { color: var(--blue, #e2c16d); font: .875rem/1.6 var(--mono, monospace); }
+.project-timeline-copy p { color: var(--muted, #bbb5a7); font-size: .875rem; line-height: 1.7; margin: .375rem 0 0; }
+@media print {
+  .project-timeline { break-inside: avoid; }
+  .project-timeline-progress, .project-timeline-track, .project-timeline-ticks { stroke: currentColor; }
+}

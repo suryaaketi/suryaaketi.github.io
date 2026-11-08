@@ -41,6 +41,8 @@ Expand each experience entry with responsibilities and achievements. Expand each
 | `components/research-case-study.tsx` | Public overview of research work and its purpose; no research source code |
 | `components/portfolio-dashboard.tsx` | Interactive Overview/Toolkit dashboard in the hero |
 | `components/portfolio-dashboard.css` | Scoped dashboard styling and workflow animation |
+| `components/project-timeline.tsx` | Circular build-duration charts and scroll animation |
+| `components/project-timeline.css` | Gold ring styling, readable labels, and responsive layout |
 | `app/layout.tsx` | Sites page title and description |
 | `github/index.html` | GitHub Pages title, description, and browser theme color |
 | `public/favicon.svg` | Browser icon |
@@ -48,6 +50,8 @@ Expand each experience entry with responsibilities and achievements. Expand each
 | `public/` | Images and other public files |
 
 Use relative public-asset paths such as `./Surya_Aketi_Resume.pdf` so files work under a GitHub repository URL as well as the site root. The GitHub build rewrites its favicon and generated script/style links to relative paths automatically.
+
+Project cards and detail views include circular build timelines when `buildTimeline` is present in `data/portfolio.ts`. LocalScribe shows 2 months out of 12 (16.67%); TaskBridge shows 1 month out of 24 (4.17%), using the supplied durations. These measure time spent building, not completion or calendar dates. Add `{ months, referenceMonths }` for future projects with confirmed timing. Rings fill when scrolled into view and replay on re-entry; reduced motion, unsupported animation, and the no-JavaScript version show the final values immediately.
 
 Update the title and description in both `app/layout.tsx` and `github/index.html` when they change. Review the résumé PDF and all public content before publication.
 

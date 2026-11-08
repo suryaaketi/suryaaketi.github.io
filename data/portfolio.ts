@@ -15,6 +15,11 @@ export const profile = {
     "I've worked on grain-boundary segmentation in microscopy images through industry-supported research at Penn State and supported machine learning projects during two summer internships at Wyntek Solutions. Outside those roles, I've built LocalScribe, an on-device dictation app, and designed TaskBridge, a modular architecture for an AI desktop assistant.",
 };
 
+export type BuildTimeline = {
+  months: number;
+  referenceMonths: number;
+};
+
 export type Project = {
   id: string;
   number: string;
@@ -27,6 +32,7 @@ export type Project = {
   kind: "scribe" | "bridge" | "research";
   sourceUrl?: string;
   demoUrl?: string;
+  buildTimeline?: BuildTimeline;
 };
 
 export const projects: Project[] = [
@@ -46,6 +52,7 @@ export const projects: Project[] = [
       "Added local noise reduction, audio normalization, silence detection, and a hands-free stop command.",
     ],
     kind: "scribe",
+    buildTimeline: { months: 2, referenceMonths: 12 },
   },
   {
     id: "taskbridge",
@@ -63,6 +70,7 @@ export const projects: Project[] = [
       "Specified a policy layer to validate action requests before passing them to the desktop execution bridge.",
     ],
     kind: "bridge",
+    buildTimeline: { months: 1, referenceMonths: 24 },
   },
   {
     id: "grain-boundaries",
