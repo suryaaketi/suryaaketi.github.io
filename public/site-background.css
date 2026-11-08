@@ -1,11 +1,8 @@
 /* Continuous matte charcoal grain echoes the supplied name artwork. */
 :root {
+  color-scheme: dark;
   --site-grain-opacity: .22;
   --site-backdrop: radial-gradient(ellipse at 30% 16%, #30312f 0%, #232422 32%, #151614 65%, #0b0b0a 100%);
-}
-:root[data-theme="light"] {
-  --site-grain-opacity: .08;
-  --site-backdrop: radial-gradient(ellipse at 30% 16%, #fffdf5 0%, #f7f3e8 45%, #eee7d6 100%);
 }
 body { min-height: 100vh; isolation: isolate; }
 body::before, body::after {

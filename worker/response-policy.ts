@@ -1,4 +1,3 @@
-import { THEME_INIT_SCRIPT } from "../lib/theme-init";
 import { STANDALONE_ERROR_STYLES } from "../lib/standalone-error-theme";
 
 const hashedAsset = /^\/_next\/static\/(?:chunks|css)\/[^?]*[.-][A-Za-z0-9_-]{6,}\.(?:js|css)$/;
@@ -24,6 +23,6 @@ export function friendlyFailure(request: Request) {
   const headers = { "Cache-Control": "private, no-store", "Content-Type": "text/html; charset=utf-8" };
   const isDocument = request.headers.get("Accept")?.includes("text/html") && !request.headers.has("RSC");
   if (!isDocument) return new Response(request.method === "HEAD" ? null : "This content is temporarily unavailable. Please try again.", { status: 503, headers: { ...headers, "Content-Type": "text/plain; charset=utf-8" } });
-  const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Surya Aketi · Try again</title><link rel="stylesheet" href="./site-background.css?v=charcoal-grain"><style>${STANDALONE_ERROR_STYLES}</style><script>${THEME_INIT_SCRIPT}</script></head><body><main class="recovery-panel"><h1>Let’s try that again.</h1><p>The portfolio couldn’t load right now. Please retry, or use the résumé and contact links below.</p><nav class="recovery-actions" aria-label="Recovery options"><a href="./">Reload portfolio</a><a href="./Surya_Aketi_Resume.pdf" download>Download résumé</a><a href="mailto:suryaaketi@gmail.com">Email me</a></nav></main></body></html>`;
+  const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="color-scheme" content="dark"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Surya Aketi · Try again</title><link rel="stylesheet" href="./site-background.css?v=charcoal-grain"><style>${STANDALONE_ERROR_STYLES}</style></head><body><main class="recovery-panel"><h1>Let’s try that again.</h1><p>The portfolio couldn’t load right now. Please retry, or use the résumé and contact links below.</p><nav class="recovery-actions" aria-label="Recovery options"><a href="./">Reload portfolio</a><a href="./Surya_Aketi_Resume.pdf" download>Download résumé</a><a href="mailto:suryaaketi@gmail.com">Email me</a></nav></main></body></html>`;
   return new Response(request.method === "HEAD" ? null : html, { status: 503, headers });
 }

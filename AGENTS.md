@@ -19,3 +19,7 @@ Terminal Git authentication uses a dedicated write-enabled SSH deploy key regist
 ## Public research content
 
 The user wants the research internship explained through high-level contributions and purposes only. Do not publish internship source code, submitted notebooks, team artifacts, or implementation recipes. Expand the résumé-backed case study in `data/portfolio.ts`; keep the six-image scope and exact meaning of the reported 8.32% result.
+
+## Appearance
+
+The user wants only the charcoal and gold version. Do not reintroduce a light theme, system color switching, or theme selector. Print styles may use a white paper background. Preserve dashboard and disclosure preferences.

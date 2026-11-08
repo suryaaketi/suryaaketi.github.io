@@ -2,7 +2,6 @@ import { fileURLToPath } from "node:url";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import { portfolioFallbackStyles, renderPortfolioFallback } from "./scripts/portfolio-fallback";
-import { THEME_INIT_SCRIPT } from "./lib/theme-init";
 
 // Static GitHub Pages entry point; the Sites/Vinext build stays separate.
 const projectDirectory = fileURLToPath(new URL(".", import.meta.url));
@@ -17,7 +16,6 @@ export default defineConfig({
       order: "pre",
       handler(html) {
         return { html: html.replace("<!--portfolio-fallback-->", renderPortfolioFallback()), tags: [
-          { tag: "script", children: THEME_INIT_SCRIPT, injectTo: "head-prepend" },
           { tag: "style", children: portfolioFallbackStyles, injectTo: "head" },
         ] };
       },

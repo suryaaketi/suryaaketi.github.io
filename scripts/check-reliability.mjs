@@ -6,10 +6,8 @@ const projectRoot = new URL("../", import.meta.url);
 const asModuleUrl = source => "data:text/javascript;base64," + Buffer.from(source).toString("base64");
 const compile = source => ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
 const loadFile = name => fs.readFile(new URL(name, projectRoot), "utf8");
-const themeSource = compile(await loadFile("lib/theme-init.ts"));
 const themeStylesSource = compile(await loadFile("lib/standalone-error-theme.ts"));
 const policySource = compile(await loadFile("worker/response-policy.ts"))
-  .replace('"../lib/theme-init"', JSON.stringify(asModuleUrl(themeSource)))
   .replace('"../lib/standalone-error-theme"', JSON.stringify(asModuleUrl(themeStylesSource)));
 const { applyResponsePolicy, friendlyFailure } = await import(asModuleUrl(policySource));
 const request = (pathname, init) => new Request("https://portfolio.test" + pathname, init);
@@ -52,8 +50,9 @@ assert.match(errorHtml, /Reload portfolio/);
 assert.match(errorHtml, /Download résumé/);
 assert.match(errorHtml, /mailto:suryaaketi@gmail.com/);
 assert.doesNotMatch(errorHtml, /stack|Error:|exception|traceback/i);
-assert.match(errorHtml, /surya\.portfolio\.theme/);
-assert.match(errorHtml, /data-theme="light"/);
+assert.match(errorHtml, /:root\{color-scheme:dark/);
+assert.match(errorHtml, /<meta name="color-scheme" content="dark">/);
+assert.doesNotMatch(errorHtml, /surya\.portfolio\.theme|data-theme="light"|prefers-color-scheme/);
 const rscFailure = friendlyFailure(request("/?rsc", { headers: { Accept: "*/*", RSC: "1" } }));
 assert.equal(rscFailure.headers.get("Content-Type"), "text/plain; charset=utf-8");
 assert.equal(await rscFailure.text(), "This content is temporarily unavailable. Please try again.");
