@@ -256,6 +256,7 @@ export const courseworkGroups: CourseworkGroup[] = [
       { code: "MATH 140", title: "Calculus with Analytic Geometry I" },
       { code: "MATH 141", title: "Calculus with Analytic Geometry II" },
       { code: "MATH 220", title: "Matrices" },
+      { code: "MATH 230", title: "Calculus and Vector Analysis" },
       { code: "STAT 200", title: "Elementary Statistics" },
       { code: "STAT 318", title: "Elementary Probability", status: "In progress · Fall 2026" },
       { code: "STAT 319", title: "Elementary Mathematical Statistics", status: "Planned · Spring 2027" },
