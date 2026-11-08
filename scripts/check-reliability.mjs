@@ -68,6 +68,14 @@ const data = await import(dataUrl);
 const fallbackSource = compile(await loadFile("scripts/portfolio-fallback.ts")).replace('"../data/portfolio"', JSON.stringify(dataUrl));
 const { renderPortfolioFallback } = await import(asModuleUrl(fallbackSource));
 const initialHtml = renderPortfolioFallback();
+const fallbackNav = initialHtml.match(/<nav\b[^>]*aria-label="Portfolio sections"[^>]*>([\s\S]*?)<\/nav>/);
+assert.ok(fallbackNav, "Missing no-script section navigation");
+assert.match(fallbackNav[1], /<a\b[^>]*href="#research"[^>]*>Research<\/a>/, "Missing no-script Research navigation link");
+assert.match(fallbackNav[1], /<a\b[^>]*href="#coursework"[^>]*>Courses<\/a>/, "Missing no-script Courses navigation link");
+const initialIds = [...initialHtml.matchAll(/\sid="([^"]+)"/g)].map(match => match[1]);
+for (const [, destination] of fallbackNav[1].matchAll(/href="#([^"]+)"/g)) {
+  assert.equal(initialIds.filter(id => id === destination).length, 1, `No-script navigation target must exist exactly once: #${destination}`);
+}
 for (const project of data.projects) assert.ok(initialHtml.includes(project.title), `Missing initial project: ${project.title}`);
 for (const job of data.experience) assert.ok(initialHtml.includes(job.company), `Missing initial experience: ${job.company}`);
 assert.match(initialHtml, /href="\.\/Surya_Aketi_Resume\.pdf"/);
@@ -76,4 +84,4 @@ for (const stream of data.researchStudy.workstreams) assert.ok(initialHtml.inclu
 assert.doesNotMatch(initialHtml, /<(?:pre|code)\b/i);
 assert.match(initialHtml, /<details>/);
 assert.doesNotMatch(initialHtml, /<form|<input|spinner/i);
-console.log("PASS: safe caching, private-page handling, friendly errors, HEAD responses, and complete no-script portfolio content.");
+console.log("PASS: safe caching, private-page handling, friendly errors, HEAD responses, and complete no-script portfolio content with valid section navigation.");
