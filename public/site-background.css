@@ -1,8 +1,7 @@
-/* One charcoal surface behind the transparent name artwork and glass panels. */
+/* One black and gold surface behind the transparent name artwork and glass panels. */
 :root {
   color-scheme: dark;
-  --site-grain-opacity: .12;
-  --site-backdrop: radial-gradient(ellipse at 82% 38%, #9a80300f 0%, transparent 52%), radial-gradient(ellipse at 30% 16%, #343a36 0%, #252925 32%, #171a17 65%, #0b0d0b 100%);
+  --site-backdrop: #080808;
 }
 body { min-height: 100vh; isolation: isolate; }
 body::before, body::after {
@@ -14,11 +13,11 @@ body::before, body::after {
 }
 body::before { background: var(--site-backdrop); }
 body::after {
-  opacity: var(--site-grain-opacity);
-  mix-blend-mode: soft-light;
-  background-image: url("./charcoal-grain.svg");
-  background-size: 384px 384px;
-  background-repeat: repeat;
+  opacity: .28;
+  background-image: url("./gold-geometry.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 @media print, (forced-colors: active) {

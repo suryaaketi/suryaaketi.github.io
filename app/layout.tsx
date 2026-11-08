@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head><link rel="stylesheet" href="/site-background.css?v=seamless-lettering" /><meta name="color-scheme" content="dark" /></head>
+      <head><link rel="stylesheet" href="/site-background.css?v=gold-geometry" /><meta name="color-scheme" content="dark" /></head>
       <body className="antialiased"><ErrorBoundary>{children}</ErrorBoundary></body>
     </html>
   );
